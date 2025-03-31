@@ -1,0 +1,113 @@
+.user-list {
+  @include flex (row,flex-end,center);
+  width: 230px;
+  padding-right: 40px;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+
+  @media (min-width: $tablet-width) {
+    min-width: 148px;
+    padding: 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 330px;
+    justify-content: center;
+    font-family: $primary-font;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+  }
+}
+
+.user-list__link {
+  display: block;
+  width: 60px;
+  height: 60px;
+  position: relative;
+  text-decoration: none;
+  color: $base-text-color;
+
+  &--enter {
+    &::after {
+      @include pseudo(16px, 16px);
+      mask-image: url("../../icons/user.svg");
+      mask-repeat: no-repeat;
+      mask-position: center;
+      mask-size: 100%;
+      background-color: $base-text-color;
+      top: 22px;
+      left: 22px;
+    }
+  }
+
+  &--basket {
+    &::after {
+      @include pseudo(16px, 16px);
+      mask-image: url("../../icons/basket.svg");
+      mask-repeat: no-repeat;
+      mask-position: center;
+      mask-size: 100%;
+      background-color: $base-text-color;
+      top: 22px;
+      left: 22px;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    @include flex (row, flex-end, center);
+
+    &--enter {
+      width: 112px;
+      height: 80px;
+
+      &::after {
+        top: 32px;
+        left: 5px;
+      }
+    }
+
+    &--basket {
+      width: 129px;
+      height: 80px;
+
+      &::after {
+        top: 32px;
+        left: 25px;
+      }
+    }
+
+    &--enter:hover::after,
+    &--enter:focus::after,
+    &--basket:hover::after,
+    &--basket:focus::after {
+      background-color: $accent-base-color;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    color: $accent-base-color;
+    outline: 0;
+  }
+
+  &:active {
+    background-color: $accent-secondary-color;
+  }
+}
+
+.user-list__text {
+  display: none;
+
+  @media (min-width: $desktop-width) {
+    display: block;
+
+    &--enter {
+      width: 83px;
+    }
+
+    &--basket {
+      width: 79px;
+    }
+  }
+}

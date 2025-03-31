@@ -1,0 +1,46 @@
+.copyright {
+  display: block;
+  width: 100%;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  text-decoration: none;
+  color: $social-list-icons-color;
+  position: relative;
+
+  &::after {
+    @include pseudo (112px, 16px);
+    mask-image: url("../../icons/copyright/academy.svg");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: 100%;
+    background-color: $social-list-icons-color;
+    top: -1px;
+    left: 94px;
+  }
+
+  @media (min-width: $desktop-width) {
+    &::after {
+      top: 0;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    color: $accent-base-color;
+    outline: 0;
+  }
+
+  &:active {
+    color: $accent-dark-color;
+  }
+
+  &:hover::after,
+  &:focus::after {
+    background-color: $accent-base-color;
+  }
+
+  &:active::after {
+    background-color: $accent-dark-color;
+  }
+}

@@ -1,0 +1,92 @@
+.social-list {
+  display: grid;
+  grid-template-columns: repeat(3, 40px);
+  width: 160px;
+  gap: 5px 20px;
+}
+
+.social-list__item {
+  width: 40px;
+  height: 40px;
+}
+
+.social-list__link {
+  display: block;
+  width: 40px;
+  height: 40px;
+
+  &--vk {
+    &::before {
+      @include pseudo (20px, 20px);
+      mask-image: url("../../icons/socials/vk.svg");
+      mask-repeat: no-repeat;
+      mask-position: center;
+      mask-size: 100%;
+      background-color: $social-list-icons-color;
+      position: relative;
+      top: 10px;
+      left: 10px;
+    }
+  }
+
+  &--pt {
+    &::before {
+      @include pseudo (22px, 22px);
+      mask-image: url("../../icons/socials/pinterest.svg");
+      mask-repeat: no-repeat;
+      mask-position: center;
+      mask-size: 100%;
+      background-color: $social-list-icons-color;
+      position: relative;
+      top: 9px;
+      left: 9px;
+    }
+  }
+
+  &--ok {
+    &::before {
+      @include pseudo (20px, 20px);
+      mask-image: url("../../icons/socials/ok.svg");
+      mask-repeat: no-repeat;
+      mask-position: center;
+      mask-size: 100%;
+      background-color: $social-list-icons-color;
+      position: relative;
+      top: 10px;
+      left: 10px;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    outline: 0;
+    background-color: $accent-secondary-color;
+  }
+
+  &:active {
+    background-color: $hover-input-opacity-color;
+  }
+
+  &--vk:hover::before,
+  &--pt:hover::before,
+  &--ok:hover::before,
+  &--vk:focus::before,
+  &--pt:focus::before,
+  &--ok:focus::before {
+    background-color: $accent-base-color;
+  }
+
+  &--vk:active::before,
+  &--pt:active::before,
+  &--ok:active::before {
+    background-color: $accent-base-color;
+  }
+
+  &.disabled,
+  &.disabled:hover,
+  &.disabled:focus,
+  &.disabled:active {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+}

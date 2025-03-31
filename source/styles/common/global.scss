@@ -1,1 +1,27 @@
 /* здесь используйте глобальные селекторы img, body, html и так далее */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: $primary-font;
+  font-size: 14px;
+  line-height: 18px;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  color: $base-text-color;
+  background-color: $page-bg-color;
+}
+
+img {
+  height: auto;
+  object-fit: contain;
+}

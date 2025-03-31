@@ -1,0 +1,51 @@
+.logo {
+  @include flex (row, center, center);
+  text-decoration: none;
+  color: $base-text-color;
+
+  @media (min-width: $desktop-width) {
+    height: 80px;
+  }
+
+  &:hover,
+  &:focus {
+    opacity: 0.6;
+    color: $accent-light-color;
+    outline: 0;
+  }
+
+  &:active {
+    opacity: 0.3;
+    color: $accent-dark-color;
+  }
+
+  &.disabled {
+    pointer-events: none;
+    opacity: 0.3;
+    color: $base-text-color;
+  }
+}
+
+.logo__image {
+  display: block;
+  object-fit: cover;
+
+  @media (min-width: $desktop-width) {
+    margin-right: 20px;
+  }
+}
+
+.logo__text {
+  display: none;
+  margin: 0;
+  padding: 0;
+
+  @media (min-width: $desktop-width) {
+    width: 135px;
+    display: block;
+    text-align: left;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+  }
+}

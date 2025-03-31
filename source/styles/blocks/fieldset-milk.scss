@@ -1,0 +1,104 @@
+.fieldset-milk {
+  margin-bottom: 29px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 0;
+  }
+}
+
+.fieldset-milk__title {
+  margin-bottom: 13px;
+  padding: 1px 0 0;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  color: $base-text-color;
+  text-align: left;
+}
+
+.fieldset-milk__list {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: $base-text-color;
+  text-align: left;
+}
+
+.fieldset-milk__item {
+  padding-left: 5px;
+
+  &:not(:last-child) {
+    margin-bottom: 13px;
+  }
+}
+
+
+.fieldset-milk__control-input {
+  margin: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  appearance: none;
+  cursor: pointer;
+  top: 5px;
+  left: -5px;
+  border-radius: 50%;
+  border: 2px solid $disabled-color;
+
+
+  &:checked {
+    border-color: $accent-base-color;
+  }
+
+  &::before {
+    @include pseudo (16px, 16px);
+    border-radius: 50%;
+    background-color: $default-input-color;
+    top: 2px;
+    left: 2px;
+  }
+
+  @media (min-width: $tablet-width) {
+    top: 6px;
+  }
+
+  &:hover,
+  &:focus {
+    border-color: $accent-light-color;
+    outline: 0;
+  }
+
+  &:active {
+    border-color: $accent-base-color;
+  }
+
+  &:disabled {
+    pointer-events: none;
+    border-color: $disabled-light-color;
+  }
+}
+
+.fieldset-milk__control-input:hover::before,
+.fieldset-milk__control-input:focus::before {
+  background-color: $hover-input-opacity-color;
+}
+
+.fieldset-milk__control-input:active::before {
+  background-color: $accent-base-color;
+}
+
+.fieldset-milk__control-input:checked::before {
+  background-color: $accent-base-color;
+}
+
+.fieldset-milk__control-label {
+  margin-left: 1px;
+}
+
+.fieldset-milk__control-input:disabled::before {
+  background-color: transparent;
+}
+
+.fieldset-milk__control-input:disabled + .fieldset-milk__control-label {
+  color: $disabled-color;
+}

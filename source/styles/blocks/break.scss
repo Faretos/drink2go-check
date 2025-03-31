@@ -1,0 +1,14 @@
+.breal-mobile {
+  @media (min-width: $tablet-width) {
+    display: none;
+  }
+}
+
+.break-tablet {
+  display: none;
+
+  @media (min-width: $tablet-width) {
+    display: block;
+  }
+}
+

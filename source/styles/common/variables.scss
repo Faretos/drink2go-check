@@ -1,1 +1,36 @@
 /* здесь используйте глобальные переменные */
+// FONTS
+$primary-font: "Montserrat", "Arial", sans-serif;
+
+// TEXT COLORS
+$base-text-color: #333333;
+$secondary-text-color: #ffffff;
+
+// BACKGROUND COLORS
+$page-bg-color: #ffffff;
+$hero-flat-white-bg-color: #f3ebe1;
+$hero-lavander-latte-bg-color: #eae6fc;
+$hero-espresso-bg-color: #e5e6e8;
+$catalog-bg-color: #f8f8f8;
+$map-bg-color: #bdbdbd;
+
+// UI COLORS
+$accent-base-color: #7859cf;
+$accent-dark-color: #593cac;
+$accent-light-color: #9070ec;
+$accent-secondary-color: #f0ebff;
+$social-list-icons-color: #bdbdbd;
+$disabled-color:#bdbdbd;
+$disabled-light-color: #e2e2e2;
+$disabled-input-color: #f8f8f8;
+$hover-input-opacity-color: rgba(120, 89, 207, 0.25);
+$default-input-color: #ffffff;
+
+// PAGE PADDING
+$mobile-page-padding: 0 20px;
+$desktop-page-padding: 0 40px;
+
+// DEVICE'S WIDTH
+$mobile-width: 320px;
+$tablet-width: 768px;
+$desktop-width: 1440px;

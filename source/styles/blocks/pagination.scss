@@ -1,0 +1,135 @@
+.pagination {
+  @include flex (row, space-between, center);
+  flex-wrap: wrap;
+  gap: 20px;
+
+  @media (min-width: $tablet-width) {
+    justify-content: flex-end;
+  }
+}
+
+.pagination__item {
+  min-width: 40px;
+  height: 40px;
+}
+
+.pagination__button {
+  background-color: $page-bg-color;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: $accent-base-color;
+  min-width: 40px;
+  height: 40px;
+  position: relative;
+
+  &--current {
+    color: $base-text-color;
+    background-color: transparent;
+    font-weight: 600;
+    pointer-events: none;
+  }
+
+  &--prev {
+    &::before {
+      @include pseudo(7px, 7px);
+      border-top: 2px solid $accent-base-color;
+      border-right: 2px solid $accent-base-color;
+      transform: rotate(225deg);
+      top: 16px;
+      left: 18px;
+    }
+  }
+
+  &--next {
+    &::after {
+      @include pseudo(7px, 7px);
+      border-top: 2px solid $accent-base-color;
+      border-right: 2px solid $accent-base-color;
+      transform: rotate(45deg);
+      top: 16px;
+      left: 16px;
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    &--prev,
+    &--next {
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  &--prev:hover::before,
+  &--prev:focus::before,
+  &--next:hover::after,
+  &--next:focus::after {
+    border-color: $page-bg-color;
+  }
+
+  &--prev:active::before,
+  &--next:active::after {
+    border-color: $page-bg-color;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $accent-light-color;
+    color: $secondary-text-color;
+  }
+
+  &:active {
+    background-color: $accent-dark-color;
+  }
+
+  &--current:hover,
+  &--current:focus {
+    background-color: transparent;
+    color: $base-text-color;
+    pointer-events: none;
+  }
+
+  &--prev:disabled::before,
+  &--next:disabled::after {
+    border-color: $page-bg-color;
+  }
+
+  &:disabled,
+  &.disabled,
+  &:disabled:hover,
+  &.disabled:hover,
+  &:disabled:focus,
+  &.disabled:focus,
+  &:disabled:active,
+  &.disabled:active {
+    color: $secondary-text-color;
+    background-color: $disabled-light-color;
+    pointer-events: none;
+  }
+}
+
+.pagination__button-text {
+  text-transform: none;
+
+  &--prev {
+    display: none;
+  }
+
+  &--next {
+    display: none;
+  }
+
+  @media (min-width: $tablet-width) {
+    display: block;
+
+    &--prev {
+      padding: 8px 14px;
+    }
+
+    &--next {
+      padding: 8px 14px;
+    }
+  }
+}

@@ -1,0 +1,106 @@
+.fieldset-price {
+  position: relative;
+  margin-bottom: 30px;
+
+  &::after {
+    @include pseudo (8px, 2px);
+    background-color: $disabled-color;
+    left: 136px;
+    bottom: 18px;
+  }
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 0;
+
+    &::after {
+      left: 107px;
+      bottom: 19px;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 1px;
+
+    &::after {
+      left: 155px;
+      bottom: 19px;
+    }
+  }
+}
+
+.fieldset-price__title {
+  margin-bottom: 29px;
+  padding: 0;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  color: $base-text-color;
+  text-align: left;
+
+  @media (min-width: $tablet-width) {
+    padding-top: 1px;
+    margin-bottom: 29px;
+  }
+}
+
+.fieldset-price__price-range-wrapper {
+  @include flex (row, space-between, center);
+}
+
+.fieldset-price__input {
+  width: 118px;
+  padding: 7px 10px 6px;
+  background-color: $page-bg-color;
+  font-family: $primary-font;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  color: $base-text-color;
+  border: 2px solid $accent-light-color;
+  border-radius: 4px;
+  text-align: center;
+  appearance: textfield;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    appearance: none;
+  }
+
+  &:hover,
+  &:focus {
+    outline: 0;
+    border-color: $accent-dark-color;
+  }
+
+  &:disabled,
+  &.disabled,
+  &:disabled:hover,
+  &.disabled:hover,
+  &:disabled:focus,
+  &.disabled:focus,
+  &:disabled:active,
+  &.disabled:active {
+    background-color: $disabled-input-color;
+    border-color: $disabled-light-color;
+    color: $disabled-color;
+    pointer-events: none;
+  }
+
+  @media (min-width: $tablet-width) {
+    width: 87px;
+    padding: 7px 10px 5px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 134px;
+    padding: 7px 10px 5px;
+  }
+}
+
+.fieldset-price__slider {
+  margin-bottom: 36px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 32px;
+  }
+}

@@ -1,0 +1,10 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.page__body {
+  min-height: 100%;
+}
+

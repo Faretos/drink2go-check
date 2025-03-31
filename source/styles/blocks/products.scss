@@ -1,0 +1,123 @@
+.products {
+  position: relative;
+
+  @media (min-width: $desktop-width) {
+    grid-column: 2 / -1;
+  }
+}
+
+.products__select-control-wrapper {
+  @include flex (row, space-between, center);
+  width: 100%;
+  margin-bottom: 16px;
+
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 29px;
+    justify-content: flex-end;
+
+    &::after {
+      right: 11px;
+    }
+  }
+}
+
+.products__select-text {
+  margin: 0 18px 0 3px;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  color: $base-text-color;
+
+  @media (min-width: $tablet-width) {
+    margin: 0 10px 0 0;
+  }
+}
+
+.products__custom-select {
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    @include pseudo(7px, 7px);
+    border-top: 2px solid $accent-base-color;
+    border-right: 2px solid $accent-base-color;
+    transform: rotate(135deg);
+    top: 7px;
+    right: 22px;
+  }
+
+  @media (min-width: $tablet-width) {
+    &::after {
+      right: 12px;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    &::after {
+      right: 12px;
+    }
+  }
+}
+
+.products__select-control {
+  width: 165px;
+  font-family: $primary-font;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  color: $accent-base-color;
+  border: none;
+  background-color: transparent;
+  appearance: none;
+  position: relative;
+  left: -2px;
+
+  @media (min-width: $tablet-width) {
+    left: 10px;
+  }
+
+  @media (min-width: $tablet-width) {
+    left: 9px;
+  }
+
+  &:hover {
+    background-color: $accent-secondary-color;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+.products__catalog {
+  @include flex (column, space-between, center);
+}
+
+.products__list {
+  margin-bottom: 41px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  color: $base-text-color;
+
+  @media (min-width: $tablet-width) {
+    display: grid;
+    margin-bottom: 71px;
+    grid-template-columns: repeat(2, 349px);
+    gap: 30px;
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-template-columns: repeat(3, 317px);
+    margin-bottom: 61px;
+  }
+}
+
+.products__item:not(:last-child) {
+  margin-bottom: 17px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 0;
+  }
+}

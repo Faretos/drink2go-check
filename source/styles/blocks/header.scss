@@ -1,5 +1,39 @@
 .header {
-  background-color: #663399;
-  color: #ffffff;
-  padding: 10px 15px;
+  font-size: 12px;
+  line-height: 16px;
+  background-color: $page-bg-color;
+  color: $base-text-color;
+}
+
+.header__wrapper {
+  @include flex (row, space-between, center);
+  width: 320px;
+  margin: 0 auto;
+  padding: $mobile-page-padding;
+  align-items: center;
+  position: relative;
+  flex-wrap: wrap;
+
+  @media (min-width: $tablet-width) {
+    width: 768px;
+    flex-wrap: nowrap;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 1440px;
+    padding: $desktop-page-padding;
+  }
+}
+
+.header__logo-wrapper {
+  @media (min-width: $tablet-width) {
+    margin-right: 53px;
+  }
+
+  @media (min-width: $desktop-width) {
+    @include flex (row, space-between, center);
+    width: 320px;
+    margin-right: 5px;
+    gap: 20px;
+  }
 }

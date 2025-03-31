@@ -1,0 +1,116 @@
+.fieldset-country-of-origin {
+  margin-bottom: 16px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 0;
+  }
+}
+
+.fieldset-country-of-origin__title {
+  margin-bottom: 13px;
+  padding: 0;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  color: $base-text-color;
+  text-align: left;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 13px;
+    padding: 1px 0 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 13px;
+  }
+}
+
+.fieldset-country-of-origin__list {
+  font-size: 16px;
+  line-height: 24px;
+  font-style: 400;
+  text-align: left;
+}
+
+.fieldset-country-of-origin__item {
+  margin-bottom: 13px;
+}
+
+.fieldset-country-of-origin__input {
+  width: 42px;
+  height: 24px;
+  background-color: $disabled-color;
+  border: 2px solid $disabled-color;
+  border-radius: 12px;
+  margin: 0;
+  appearance: none;
+  position: relative;
+  cursor: pointer;
+  top: 6px;
+  left: 0;
+  box-sizing: border-box;
+
+  &::before {
+    @include pseudo(20px, 20px);
+    background-color: $page-bg-color;
+    border-radius: 50%;
+    transition: 0.2s;
+    top: 0;
+    left: 0;
+  }
+
+  @media (min-width: $tablet-width) {
+    top: 6px;
+    left: -1px;
+  }
+
+  @media (min-width: $desktop-width) {
+    top: 5px;
+    left: 0;
+  }
+
+  &:hover,
+  &:focus {
+    border: 2px solid $accent-light-color;
+    background-color: $hover-input-opacity-color;
+    outline: 0;
+  }
+}
+
+.fieldset-country-of-origin__input:checked {
+  background-color: $accent-base-color;
+  border-color: $accent-base-color;
+
+  &::before {
+    transform: translateX(18px);
+    transition: 0.2s;
+  }
+}
+
+.fieldset-country-of-origin__label {
+  margin-left: 6px;
+
+  @media (min-width: $tablet-width) {
+    margin-left: 4px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-left: 6px;
+  }
+}
+
+.fieldset-country-of-origin__input:disabled {
+  pointer-events: none;
+  background-color: $disabled-light-color;
+  border-color: $disabled-light-color;
+
+  &:checked {
+    &::before {
+      background-color: $disabled-color;
+    }
+  }
+}
+
+.fieldset-country-of-origin__input:disabled + .fieldset-country-of-origin__label {
+  color: $disabled-color;
+}

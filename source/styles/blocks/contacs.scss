@@ -1,0 +1,86 @@
+.contacts__title {
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: $accent-base-color;
+}
+
+.contacts__adress {
+  margin-bottom: 17px;
+  padding-left: 19px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  position: relative;
+  text-align: left;
+
+  &::before {
+    @include pseudo (13px, 16px);
+    background-image: url("../../icons/contacts/address.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    top: 2px;
+    left: 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 16px;
+
+    &::before {
+      top: 2px;
+      left: 1px;
+    }
+  }
+}
+
+.contacts__phone {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding-left: 19px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  text-decoration: none;
+  color: $base-text-color;
+  position: relative;
+
+  &::before {
+    @include pseudo (13px, 16px);
+    mask-image: url("../../icons/contacts/phone.svg");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: 100%;
+    background-color: $accent-base-color;
+    top: 1px;
+    left: 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    &::before {
+      top: 2px;
+      left: 1px;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    color: $accent-light-color;
+    outline: 0;
+  }
+
+  &:active {
+    color: $accent-dark-color;
+  }
+
+  &.disabled,
+  &.disabled:hover,
+  &.disabled:focus,
+  &.disabled:active {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+}

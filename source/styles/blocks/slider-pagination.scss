@@ -1,0 +1,28 @@
+.slider-pagination {
+  position: absolute;
+  bottom: 67px;
+  left: 619px;
+}
+
+.slider-pagination__button {
+  background-color: $page-bg-color;
+  width: 62px;
+  height: 4px;
+
+  &--current {
+    background-color: $accent-base-color;
+  }
+
+  &:not(:last-child) {
+    margin-right: 4px;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: rgba(120, 89, 207, 0.25);
+  }
+
+  &:active {
+    background-color: $accent-base-color;
+  }
+}

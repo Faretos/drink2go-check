@@ -1,0 +1,36 @@
+.map {
+  height: 420px;
+  background-color: $map-bg-color;
+  background-image:
+    image-set(
+      url("../../images/map/map_mobile@1x.webp") 1x,
+      url("../../images/map/map_mobile@2x.webp") 2x,
+      url("../../images/map/map_mobile@1x.png") 1x,
+      url("../../images/map/map_mobile@2x.png") 2x
+    );
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @media (min-width: $tablet-width) {
+    min-height: 480px;
+    background-image:
+      image-set(
+        url("../../images/map/map_tablet@1x.webp") 1x,
+        url("../../images/map/map_tablet@2x.webp") 2x,
+        url("../../images/map/map_tablet@1x.png") 1x,
+        url("../../images/map/map_tablet@2x.png") 2x
+      );
+  }
+
+  @media (min-width: $desktop-width) {
+    min-height: 540px;
+    background-image:
+      image-set(
+        url("../../images/map/map_desktop@1x.webp") 1x,
+        url("../../images/map/map_desktop@2x.webp") 2x,
+        url("../../images/map/map_desktop@1x.png") 1x,
+        url("../../images/map/map_desktop@2x.png") 2x
+      );
+  }
+}
