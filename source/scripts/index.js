@@ -1,1 +1,3 @@
-/* в этот файл добавляет скрипты*/
+import './burger-menu.js';
+import './price-slider.js';
+import './hero-slider.js';
